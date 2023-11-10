@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --textColor1: #fff;
+    --textcolor2: orange;
+    --border: 1px solid var(--raisin-black);
+    --transition: 0.3s ease;
+    --shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    --black-shadow: rgba(1, 1, 1, 0.5);
+    --black-shadow2: rgba(1, 1, 1, 0.8);
+    --raisin-black: rgb(37, 37, 37);
+    --bigScreen-padding: 100px 200px;
+    --mediumScreen-padding: 100px 40px;
+    --text3: #F77313;    
+    --text4: #fb6f0b;   
+    --linear: linear-gradient(to right,#394867, #212A3E);
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: var(--linear);
+    position: relative;
+}
+
+.back-btn{
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: var(--transition);
+    color: var(--raisin-black);
+}
+
+.back-btn i{
+    font-size: .7em;
+}
+
+.back-btn:hover{
+    color: #9BA4B5;
+}
+
+.white{
+    position: absolute;
+    top: 0;
+    width: 329px;
+    height: 100vh;
+    z-index: -1;
+    left: 0;
+    background: var(--textColor1);
+}
+
+.sign-up-container{
+    background: var(--textColor1);
+    width: 70%;
+    height: 500px;
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+.sign-up-img{
+    background: url(../images/signup.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--raisin-black);
+    width: 50%;
+}
+.sign-up{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 15px;
+    padding: 20px 30px;
+    background-color: #9BA4B5;
+}
+
+.sign-up header p{
+    color: var(--black-shadow);
+}
+
+.sign-up form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.row{
+    display: flex;
+    gap: 10px;
+}
+
+.input-text {
+    width: 100%;
+    position: relative;
+    border-bottom: var(--border);
+}
+
+.input-text input {
+    width: 100%;
+    height: 25px;
+    font-size: .9em;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--raisin-black);
+}
+
+.input-text label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: var(--transition);
+    font-size: .8em;
+}
+
+.input-text span::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--textColor1);
+    transition: var(--transition);
+}
+
+.input-text input:focus~label,
+.input-text input:valid~label {
+    top: -2px;
+    color: var(--textColor1);
+}
+
+.input-text input:focus~span::before,
+.input-text input:valid~span::before {
+    width: 100%;
+}
+
+.input-text i{
+    position: absolute;
+    right: 5px;
+    top: 20%;
+    font-size: 0.7em;
+    color: var(--raisin-black);
+}
+
+.input-text input:focus~i{
+    color: var(--textColor1);
+}
+
+.input-text #pass-icon,
+.input-text #cpass-icon{
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.input-text #pass-icon:hover,
+.input-text #pass-icon:focus,
+.input-text #cpass-icon:hover,
+.input-text #cpass-icon:focus{
+    color: var(--linear);
+}
+
+form input[type=date]:focus~ i,
+form input[type=date]:valid~ i {
+    display: none;
+}
+
+form input[type=date]:focus~ label,
+form input[type=date]:valid~ label {
+    top: -7px;
+}
+
+.input-gender{
+    width: 50%;
+    position: relative;
+    border-bottom: var(--border);
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+}
+
+.input-gender label,.terms label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+  }
+
+  .design {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    outline-offset: 2px;
+    outline: 2px solid #888888;
+    margin-right: 8px;
+    transition: var(--transition);
+  }
+
+  input[type="radio"]:checked~.design {
+    outline-color: var(--linear);
+    background: var(--linear);
+  }
+
+  input[type="radio"]:checked~.value {
+    color: var(--linear);
+  }
+
+.terms{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.7em;
+}
+.terms .design{
+    margin-right: 15px;
+}
+
+.signup-btn{
+    height: 40px;
+}
+
+.signup-btn input[type="submit"] {
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--textColor1);
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: var(--transition);
+    border-radius: 5px;
+    background: var(--linear);
+}
+
+.signup-btn input[type="submit"]:hover,
+.signup-btn input[type="submit"]:active  {
+    opacity: 0.8;
+}
+
+@media (max-width:1100px) {
+    .sign-up-img{
+        width: 40%;
+    }
+    .sign-up{
+        width: 60%;
+        padding: 20px;
+    }
+}
+
+@media (max-width:800px) {
+    .sign-up-img{
+        display: none;
+    }
+    .sign-up{
+        width: 100%;
+    }
+    .white{
+        width: 200px;
+    }
+    .back-btn{
+        font-size: 1em;
+    }
+}
+
+@media (max-width:500px) {
+    .white{
+        width: 100px;
+    }
+    .back-btn{
+        top: 5px;
+        left: 5px;
+        font-size: .5em;
+    }
+    .sign-up{
+        gap: 10px;
+    }
+    .sign-up header h1{
+        font-size: 1em;
+    }
+    .sign-up header p{
+        font-size: .8em;
+    }
+    .sign-up form{
+        gap: 15px;
+    }
+    .row{
+     flex-direction: column;
+     gap: 15px;
+    }
+    .input-text label{
+        font-size: .6em;
+    }
+    .input-text input {
+        height: 15px;
+        font-size: .7em;
+    }
+    .input-text span::before {
+        top: 23px;
+    }
+    .input-gender{
+        width: 100%;
+        border: none;
+        font-size: 0.6em;
+    }
+    .terms{
+        font-size: 0.5em;
+    }
+    .signup-btn{
+        height: 25px;
+    }
+    .signup-btn input[type="submit"] {
+        font-size: .6em;
+    }
+}

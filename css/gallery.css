@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root{
+  --textColor1: #fff;
+  --textcolor2: orange;
+  --border: 1px solid var(--textColor1);
+  --transition: 0.3s ease;
+  --shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  --black-shadow: rgba(1, 1, 1, 0.5);
+  --black-shadow2: rgba(1, 1, 1, 0.8);
+  --raisin-black: rgb(37, 37, 37);
+  --bigScreen-padding: 100px 200px;
+  --mediumScreen-padding: 100px 40px;
+  --text3: #F77313;    
+  --text4: #fb6f0b;    
+}
+
+body {
+  background: url(../img/bg.jpg) no-repeat;
+  background-size: cover;
+}
+
+.categories {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 200px;
+}
+
+.categories li {
+  list-style-type: none;
+}
+
+.categories li a {
+  display: block;
+  color: var(--textColor1);
+  text-align: center;
+  text-decoration: none;
+}
+
+.categories li a:hover:not(.active) {
+  color: #333232;
+}
+
+.categories .active {
+  color: rgb(116, 1, 1);
+}
+
+section {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  color: var(--text-color);
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.floor-cont {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.roof-cont {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bath-cont {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.garden-cont {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Portfolio {
+  background: url(../img/portfolio.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-size: 3em;
+  font-weight: 300;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: end;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  letter-spacing: 3px;
+}
+
+.Portfolio h1 {
+  color: white;
+}
+
+.img {
+  height: 100%;
+  width: 50%;
+}
+
+article {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #141313;
+}
+
+
+article::before {
+  background-image: var(--background-gray);
+  background-size: cover;
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+}
+
+article>h2,
+p {
+  color: #fff;
+  isolation: isolate;
+}
+
+article a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.Floor {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.roof {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.bath {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.garden {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.slideshow-container {
+  width: 900px;
+  height: 500px;
+  position: relative;
+  display: inline-block;
+}
+
+.mySlides,
+.mySlides1,
+.mySlides2,
+.mySlides3 {
+  display: none;
+  height: 100%;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+@media (max-width: 1700px) {
+  .categories {
+    font-size: 25px;
+    height: 100px;
+  }
+
+}
+@media (max-width: 1100px) {
+  .Portfolio {
+    width: 100%;
+    height: 55vh;
+    font-size: 40px;
+    background-position: 0 0;
+  }
+
+  .categories {
+    font-size: 22px;
+   height: 80px;
+  }
+
+  .floor-cont {
+    flex-direction: column;
+  }
+
+  .roof-cont {
+    flex-direction: column;
+  }
+
+  .bath-cont {
+    flex-direction: column;
+  }
+
+  .garden-cont {
+    flex-direction: column;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    height: 500px;
+    order: 2;
+  }
+
+  article {
+    width: 100%;
+    height: 100px;
+    order: 1;
+  }
+
+  section {
+    height: 650px;
+  }
+
+  .Floor {
+    font-size: 23px;
+  }
+
+  .roof {
+    font-size: 23px;
+  }
+
+  .bath {
+    font-size: 23px;
+  }
+
+  .garden {
+    font-size: 23px;
+  }
+}
+
+@media (max-width:950px) {
+  .Portfolio {
+    height: 48vh;
+    background-position: 0 0;
+  }
+
+  .categories {
+    font-size: 15px;
+    height: 60px;
+  }
+  section{
+    height: 500px;
+  }
+  .floor-cont {
+    flex-direction: column;
+  }
+
+  .roof-cont {
+    flex-direction: column;
+  }
+
+  .bath-cont {
+    flex-direction: column;
+  }
+
+  .garden-cont {
+    flex-direction: column;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    height: 400px;
+    order: 2;
+  }
+
+  article {
+    width: 100%;
+    height: 80px;
+    order: 1;
+  }
+
+  .Floor {
+    font-size: 20px;
+  }
+
+  .roof {
+    font-size: 20px;
+  }
+
+  .bath {
+    font-size: 20px;
+  }
+
+  .garden {
+    font-size: 20px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .Portfolio {
+    width: 100%;
+    height: 42vh;
+    font-size: 20px;
+    background-position: 0 0;
+  }
+
+  .categories {
+    font-size: 12px;
+    height: 40px;
+  }
+
+  .floor-cont {
+    flex-direction: column;
+  }
+
+  .roof-cont {
+    flex-direction: column;
+  }
+
+  .bath-cont {
+    flex-direction: column;
+  }
+
+  .garden-cont {
+    flex-direction: column;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    height: 200px;
+    order: 2;
+  }
+
+  article {
+    width: 100%;
+    height: 40px;
+    order: 1;
+  }
+
+  section {
+    height: 250px;
+  }
+
+  .Floor {
+    font-size: 12px;
+  }
+
+  .roof {
+    font-size: 12px;
+  }
+
+  .bath {
+    font-size: 12px;
+  }
+
+  .garden {
+    font-size: 12px;
+  }
+}

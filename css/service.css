@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --background-gray: url('../images/Concrete-BG-scaled.jpg');
+    --textColor1: #fff;
+    --textcolor2: orange;
+    --border: 1px solid var(--textColor1);
+    --transition:all 0.3s ease;
+    --shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    --black-shadow: rgba(1, 1, 1, 0.5);
+    --black-shadow2: rgba(1, 1, 1, 0.8);
+    --raisin-black: rgb(37, 37, 37);
+    --bigScreen-padding: 100px 200px;
+    --mediumScreen-padding: 100px 40px;
+    --text3: #F77313;
+    }
+
+
+.background-img{
+    background-image: url(../images/Concrete-BG-scaled.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.background-img::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    opacity: 0.6;
+}
+
+section{
+    width: 100%;
+    /* height: 350px; */
+    display: flex;
+    color: var(--textColor1);
+}
+
+.services{
+    background: url("../images/michael-warf-f8egRYt5RGk-unsplash.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    align-items: end;
+    padding-bottom: 40px;
+    padding-left: 40px;
+}
+
+.services h1{
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.services-p{
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.img{
+    height: 100%;
+    width: 50%;
+}
+
+article{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 40px;
+    text-align: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+article h2{
+    color: var(--textcolor2);
+}
+
+ article a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+} 
+
+.contracting .img{
+    background: url("../images/contracting-img.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.renovations .img{
+    background: url("../images/Project-Mgt-Banner-scaled.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.interior-design .img{
+    background: url("../images/ryan-ancill-nGsVMkRatgM-unsplash.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.interior-design {
+    margin-bottom: -40px;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-200px);
+    transition: all .5s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media (max-width: 540px){
+    .services-p{
+        font-size: 0.8em;
+    }
+    section .img{
+        width: 100%;
+        height: 50vh;
+    }
+    article {
+        width: 100%;
+    }
+     .contracting ,.renovations,.interior-design{
+        flex-direction: column;
+    }
+    .contracting article, .interior-design article{
+        order: 2;
+    }
+}
